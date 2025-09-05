@@ -1,0 +1,134 @@
+/* || VARIABLES */
+:root {
+  --primary-clr: #2c3e50;
+  --secondary-clr: #e74c3c;
+  --text-clr: #333;
+  --bg-clr: #f9f9f9;
+  --ff: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --max-width: 900px;
+  --padding: 20px;
+  --timeline-line-width: 2px;
+  --timeline-dot-size: 10px;
+}
+
+/* || GENERAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff);
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding: var(--spacing);
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--primary-clr);
+}
+
+/* MAIN CONTENT */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* FIGURE */
+figure {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+figure img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 10px;
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); */
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* TIMELINE SECTION */
+section h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--primary-clr);
+}
+
+/* TIMELINE LIST */
+ul {
+  list-style: none;
+  position: relative;
+  padding-left: var(--padding);
+}
+
+ul::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: var(--timeline-line-width);
+  height: 100%;
+  background-color: var(--primary-clr);
+}
+
+ul li {
+  margin-bottom: 1.5rem;
+  padding-left: 20px;
+  position: relative;
+}
+
+/* TIMELINE DOTS */
+ul li::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 5px;
+  width: var(--timeline-dot-size);
+  height: var(--timeline-dot-size);
+  background-color: var(--secondary-clr);
+  border-radius: 50%;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ccc;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: #555;
+}
+
+/* || RESPONSIVE CHANGES */
+@media (max-width: 768px) {
+  main {
+    padding: 0 var(--padding);
+  }
+
+  ul::before {
+    left: 5px;
+  }
+
+  ul li::before {
+    left: -7px;
+    width: 8px;
+    height: 8px;
+  }
+}
